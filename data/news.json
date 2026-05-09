@@ -1,3 +1,141 @@
 {
-  "issues": []
+  "issues": [
+    {
+      "issueNumber": 18,
+      "publishDate": "",
+      "news": [
+        {
+          "category": "客户动向",
+          "title": "【2026移动云大会】以算力聚新动能 向智能拓新空间",
+          "url": "https://mp.weixin.qq.com/s/2h6C431vPSk0iE1lbkLfkA",
+          "company": "中国移动",
+          "tags": [
+            "人工智能",
+            "云计算"
+          ],
+          "region": "中国"
+        }
+      ]
+    },
+    {
+      "issueNumber": 19,
+      "publishDate": "",
+      "news": [
+        {
+          "category": "客户动向",
+          "title": "2026移动云大会召开",
+          "url": "https://mp.weixin.qq.com/s/OPJx2X7FPoXhhqlcKN9wDw",
+          "company": "中国移动",
+          "tags": [
+            "人工智能",
+            "云计算"
+          ],
+          "region": "中国"
+        },
+        {
+          "category": "客户动向",
+          "title": "一馆看尽AI黑科技！中国移动点亮智能新空间！",
+          "url": "https://mp.weixin.qq.com/s/21j0AGS0__cIEX_qfCf4vQ",
+          "company": "中国移动",
+          "tags": [
+            "人工智能",
+            "云计算"
+          ],
+          "region": "中国"
+        },
+        {
+          "category": "客户动向",
+          "title": "【数字中国建设峰会】中国电信柯瑞文：Token经营的本质就是为用户提供AI服务",
+          "url": "https://www.c114.com.cn/news/117/a1309606.html",
+          "company": "中国移动",
+          "tags": [
+            "人工智能",
+            "Token经营"
+          ],
+          "region": "中国"
+        },
+        {
+          "category": "客户动向",
+          "title": "中国联通智能网联汽车超1亿",
+          "url": "https://mp.weixin.qq.com/s/JrDvgwQGs0eIqmGO_TA2aA",
+          "company": "中国联通",
+          "tags": [
+            "车联网"
+          ],
+          "region": "中国"
+        },
+        {
+          "category": "友商观察",
+          "title": "诺基亚出售固定无线业务",
+          "url": "https://mp.weixin.qq.com/s/CWqesavXzsDOQsU7G0KP1Q",
+          "company": "诺基亚",
+          "tags": [
+            "固定无线"
+          ],
+          "region": "欧洲"
+        },
+        {
+          "category": "友商观察",
+          "title": "三星电子市值破万亿：一个时代落幕，一个时代开启",
+          "url": "https://mp.weixin.qq.com/s/FDVc7uJyDv2g_NEZT0NmXQ",
+          "company": "三星",
+          "tags": [
+            "财报业绩"
+          ],
+          "region": "韩国"
+        },
+        {
+          "category": "行业脉搏",
+          "title": "iPhone鲸吞48%全球智能手机收入：平均售价近乎三星小米OV之和",
+          "url": "https://www.c114.com.cn/news/51/a1309731.html",
+          "company": "苹果",
+          "tags": [
+            "智能手机"
+          ],
+          "region": "美国"
+        },
+        {
+          "category": "全球视野",
+          "title": "T-Mobile 5G-A 牵手物理 AI，行业破局点还是抢跑噱头？",
+          "url": "https://mp.weixin.qq.com/s/6UiSY_UObZazvnbHxpOqEQ",
+          "company": "T-Mobile",
+          "tags": [
+            "5G-A",
+            "人工智能"
+          ],
+          "region": "美国"
+        },
+        {
+          "category": "科技前沿",
+          "title": "宇树发布最新人形机器人，仅2.69万",
+          "url": "https://mp.weixin.qq.com/s/j80551pCPmpecWXmsny5Ew",
+          "company": "宇树科技",
+          "tags": [
+            "具身智能"
+          ],
+          "region": "中国"
+        },
+        {
+          "category": "科技前沿",
+          "title": "豆包回应将新增付费订阅",
+          "url": "https://mp.weixin.qq.com/s/iQts9eNtiOWRIGrXL4Hceg",
+          "company": "字节跳动",
+          "tags": [
+            "人工智能"
+          ],
+          "region": "中国"
+        },
+        {
+          "category": "科技前沿",
+          "title": "“科技四巨头”罕见同日财报，为什么只有谷歌赢了？",
+          "url": "https://mp.weixin.qq.com/s/tzaUEmvcZyRnW9-SAp7wNQ",
+          "company": "谷歌",
+          "tags": [
+            "财报业绩"
+          ],
+          "region": "美国"
+        }
+      ]
+    }
+  ]
 }
