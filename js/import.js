@@ -83,7 +83,7 @@ const Import = {
 
         // 8. 保存到 LocalStorage 并更新内存
         DataStore.allData = merged;
-        DataStore.saveToLocal(merged);
+        DataStore.saveToLocal(merged, 'import');
 
         // 构建成功消息
         let msg = '\u6210\u529f\u5bfc\u5165 ' + parsed.length + ' \u6761\u65b0\u95fb';

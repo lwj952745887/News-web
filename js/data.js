@@ -35,34 +35,45 @@ const DataStore = {
      * @returns {Promise<Object>}
      */
     load: async function () {
-        // 优先从 LocalStorage 加载
-        const local = this.loadFromLocal();
-        if (local) {
-            this.allData = local;
-            console.log('[DataStore] 从 LocalStorage 加载缓存数据');
-            return local;
+        // 读取 LocalStorage 缓存
+        const cache = this.loadFromLocal();
+
+        // 情况1：有导入数据（Excel导入），优先级最高
+        if (cache && cache.source === 'import') {
+            this.allData = cache.data;
+            console.log('[DataStore] 从 LocalStorage 加载导入数据');
+            return cache.data;
         }
 
-        // file:// 协议下返回空数据
+        // 情况2：file:// 协议下，有缓存用缓存，无缓存用默认空数据
         if (this._isFileProtocol()) {
+            if (cache) {
+                this.allData = cache.data;
+                return this.allData;
+            }
             console.log('[DataStore] file:// 协议，无缓存数据');
             this.allData = JSON.parse(JSON.stringify(this.DEFAULT_DATA));
             return this.allData;
         }
 
-        // 从 news.json 加载
+        // 情况3：正常部署环境，始终从服务器获取最新数据
         try {
-            console.log('[DataStore] 从 news.json 加载数据');
+            console.log('[DataStore] 从 news.json 加载最新数据');
             const response = await fetch('data/news.json');
             if (!response.ok) throw new Error('HTTP ' + response.status);
             const data = await response.json();
             this.allData = data;
-            this.saveToLocal(data);
+            this.saveToLocal(data, 'server');
             return data;
         } catch (err) {
             console.error('[DataStore] 加载失败:', err);
-            // 兜底：返回空数据
-            console.log('[DataStore] news.json 加载失败，返回空数据');
+            // 兜底：有缓存则用缓存，无缓存返回空数据
+            if (cache) {
+                console.log('[DataStore] 网络不可用，使用缓存数据');
+                this.allData = cache.data;
+                return cache.data;
+            }
+            console.log('[DataStore] 无可用数据，返回空数据');
             this.allData = JSON.parse(JSON.stringify(this.DEFAULT_DATA));
             return this.allData;
         }
@@ -72,14 +83,15 @@ const DataStore = {
      * 将数据保存到 LocalStorage
      * @param {Object} data
      */
-    saveToLocal: function (data) {
+    saveToLocal: function (data, source) {
         try {
             const cache = {
                 timestamp: Date.now(),
+                source: source || 'server',
                 data: data
             };
             localStorage.setItem(this.STORAGE_KEY, JSON.stringify(cache));
-            console.log('[DataStore] 数据已缓存到 LocalStorage');
+            console.log('[DataStore] 数据已缓存到 LocalStorage' + (source === 'import' ? '（导入数据）' : ''));
         } catch (e) {
             console.warn('[DataStore] LocalStorage 写入失败:', e);
         }
@@ -95,14 +107,14 @@ const DataStore = {
             if (!raw) return null;
 
             const cache = JSON.parse(raw);
-            // 检查缓存是否过期
-            if (Date.now() - cache.timestamp > this.CACHE_EXPIRY) {
+            // 仅对 server 来源的缓存做过期检查
+            if (cache.source !== 'import' && Date.now() - cache.timestamp > this.CACHE_EXPIRY) {
                 console.log('[DataStore] 缓存已过期');
                 localStorage.removeItem(this.STORAGE_KEY);
                 return null;
             }
 
-            return cache.data;
+            return cache;
         } catch (e) {
             console.warn('[DataStore] LocalStorage 读取失败:', e);
             return null;
