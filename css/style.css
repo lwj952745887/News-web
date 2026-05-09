@@ -302,6 +302,19 @@ a:hover {
     background: var(--color-accent-glow);
 }
 
+.btn-export {
+    background: transparent;
+    color: var(--color-text-dim);
+    border-color: var(--color-border);
+    font-size: 0.78rem;
+}
+
+.btn-export:hover {
+    color: #10b981;
+    border-color: #10b981;
+    background: rgba(16, 185, 129, 0.08);
+}
+
 .btn:disabled {
     opacity: 0.5;
     cursor: not-allowed;

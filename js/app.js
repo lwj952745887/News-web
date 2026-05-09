@@ -103,6 +103,12 @@ const App = {
             debugBtn.addEventListener('click', () => this._showDebugPanel());
         }
 
+        // ---- 导出按钮 ----
+        const exportBtn = document.getElementById('export-btn');
+        if (exportBtn) {
+            exportBtn.addEventListener('click', () => this._handleExport());
+        }
+
         // ---- 诊断面板关闭 ----
         const debugClose = document.getElementById('debug-close');
         if (debugClose) {
@@ -680,6 +686,56 @@ const App = {
             toast.classList.add('toast-fadeout');
             setTimeout(() => toast.remove(), 400);
         }, 3000);
+    },
+
+    /**
+     * 导出当前数据为标准 news.json 文件
+     * 用户下载后可提交到 GitHub，使数据对所有用户可见
+     */
+    _handleExport: function () {
+        if (!this._rawData || !this._rawData.issues || this._rawData.issues.length === 0) {
+            this._showToast('暂无数据可导出，请先导入 Excel 文件', 'error');
+            return;
+        }
+
+        try {
+            // 构建导出的数据结构（纯净格式，不含内部 _ 前缀字段）
+            const exportData = {
+                issues: this._rawData.issues.map(issue => ({
+                    issueNumber: issue.issueNumber,
+                    publishDate: issue.publishDate,
+                    news: (issue.news || []).map(item => ({
+                        category: item.category,
+                        title: item.title,
+                        url: item.url,
+                        company: item.company || '',
+                        tags: item.tags || [],
+                        region: item.region || ''
+                    }))
+                }))
+            };
+
+            // 转为 JSON 字符串（带缩进）
+            const jsonStr = JSON.stringify(exportData, null, 2);
+
+            // 创建 Blob 并触发下载
+            const blob = new Blob([jsonStr], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'news.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            const totalItems = this._rawData.issues.reduce((s, i) => s + (i.news || []).length, 0);
+            const totalIssues = this._rawData.issues.length;
+            this._showToast('已导出 ' + totalIssues + ' 期共 ' + totalItems + ' 条新闻，请提交到 GitHub', 'success');
+        } catch (e) {
+            console.error('[App] 导出失败:', e);
+            this._showToast('导出失败：' + e.message, 'error');
+        }
     },
 
     /**
