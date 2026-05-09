@@ -1,0 +1,45 @@
+{
+  "issues": [
+    {
+      "issueNumber": 1,
+      "publishDate": "2025-05-08",
+      "news": [
+        { "category": "客户动向", "title": "华为发布鸿蒙生态最新进展", "url": "https://example.com/huawei-harmony", "company": "华为", "tags": ["鸿蒙", "生态"] },
+        { "category": "客户动向", "title": "腾讯云推出新一代AI开发平台", "url": "https://example.com/tencent-ai", "company": "腾讯", "tags": ["AI", "云服务"] },
+        { "category": "友商观察", "title": "字节跳动海外业务营收增长40%", "url": "https://example.com/bytedance-overseas", "company": "字节跳动", "tags": ["海外", "增长"] },
+        { "category": "友商观察", "title": "阿里巴巴国际站推出AI外贸助手", "url": "https://example.com/alibaba-ai-trade", "company": "阿里巴巴", "tags": ["AI", "外贸"] },
+        { "category": "行业脉搏", "title": "2025年Q1中国云计算市场报告", "url": "https://example.com/cloud-report", "company": "IDC", "tags": ["云计算", "市场报告"] },
+        { "category": "行业脉搏", "title": "大模型应用落地进入加速期", "url": "https://example.com/llm-acceleration", "company": "多家机构", "tags": ["大模型", "落地"] },
+        { "category": "海外视野", "title": "OpenAI发布GPT-5关键特性预览", "url": "https://example.com/openai-gpt5", "company": "OpenAI", "tags": ["AI", "GPT"] },
+        { "category": "海外视野", "title": "欧盟通过《人工智能法案》最终文本", "url": "https://example.com/eu-ai-act", "company": "欧盟", "tags": ["监管", "AI"] },
+        { "category": "科技前沿", "title": "量子计算取得重大突破", "url": "https://example.com/quantum-breakthrough", "company": "Google", "tags": ["量子计算", "突破"] },
+        { "category": "科技前沿", "title": "新型固态电池续航突破1000公里", "url": "https://example.com/solid-state-battery", "company": "宁德时代", "tags": ["电池", "新能源"] }
+      ]
+    },
+    {
+      "issueNumber": 2,
+      "publishDate": "2025-05-15",
+      "news": [
+        { "category": "客户动向", "title": "比亚迪与英伟达深化自动驾驶合作", "url": "https://example.com/byd-nvidia", "company": "比亚迪", "tags": ["自动驾驶", "合作"] },
+        { "category": "客户动向", "title": "京东物流全面接入AI调度系统", "url": "https://example.com/jd-ai-logistics", "company": "京东", "tags": ["AI", "物流"] },
+        { "category": "友商观察", "title": "拼多多TEMU在日本市场快速增长", "url": "https://example.com/temu-japan", "company": "拼多多", "tags": ["出海", "电商"] },
+        { "category": "行业脉搏", "title": "国产大模型通过国家备案数量超百个", "url": "https://example.com/llm-approval", "company": "多家机构", "tags": ["大模型", "监管"] },
+        { "category": "海外视野", "title": "微软发布Copilot企业版新功能", "url": "https://example.com/microsoft-copilot", "company": "Microsoft", "tags": ["AI", "办公"] }
+      ]
+    },
+    {
+      "issueNumber": 3,
+      "publishDate": "2025-05-22",
+      "news": [
+        { "category": "客户动向", "title": "中国移动发布算力网络行动计划", "url": "https://example.com/cmcc-compute", "company": "中国移动", "tags": ["算力", "网络"] },
+        { "category": "客户动向", "title": "字节跳动旗下飞书发布AI助手", "url": "https://example.com/feishu-ai", "company": "字节跳动", "tags": ["AI", "办公协作"] },
+        { "category": "友商观察", "title": "美团进军AI大模型赛道", "url": "https://example.com/meituan-llm", "company": "美团", "tags": ["AI", "大模型"] },
+        { "category": "行业脉搏", "title": "2025年AI芯片市场规模预测", "url": "https://example.com/ai-chip-market", "company": "Gartner", "tags": ["AI芯片", "市场"] },
+        { "category": "海外视野", "title": "苹果Vision Pro在中国区销量超预期", "url": "https://example.com/apple-vision-pro", "company": "Apple", "tags": ["AR/VR", "硬件"] },
+        { "category": "科技前沿", "title": "6G通信技术研究取得关键进展", "url": "https://example.com/6g-progress", "company": "多家机构", "tags": ["6G", "通信"] },
+        { "category": "科技前沿", "title": "脑机接口首次实现人体临床试验", "url": "https://example.com/bci-trial", "company": "Neuralink", "tags": ["脑机接口", "医疗"] },
+        { "category": "科技前沿", "title": "开源AI框架性能全面超越闭源方案", "url": "https://example.com/open-source-ai", "company": "Meta", "tags": ["开源", "AI框架"] }
+      ]
+    }
+  ]
+}
